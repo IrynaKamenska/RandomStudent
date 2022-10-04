@@ -20,6 +20,8 @@ public class Main {
 
         StudentDB db = new StudentDB(list);
         ArrayList<Student> listOfStudents = db.getAllStudents();
+
+        System.out.println("Random student: " + db.getRandomStudent());
         System.out.println("List od students: " + listOfStudents);
         try{
             db.findById(1);
