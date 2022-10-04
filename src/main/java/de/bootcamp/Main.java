@@ -1,4 +1,6 @@
-package org.example;
+package de.bootcamp;
+
+import de.bootcamp.Student;
 
 public class Main {
     public static void main(String[] args) {
