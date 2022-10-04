@@ -4,16 +4,26 @@ public class StudentDB {
     private Student[] students;
 
     public StudentDB(Student [] students){
-        this.students = new Student[50];
-
+        this.students = new Student[]{};
     }
     public  Student[] getAllStudents(){
         return students;
     }
 
-    public Student[] getRandomStudent() {
-        int randomStudent = (int)(Math.random() * (students.length-1));
-        return new Student[randomStudent];
+    public Student getRandomStudent() {
+        int randomStudent = (int)(Math.random() * (students.length));
+        return students[randomStudent];
     }
+
+    public Student findById(int id){
+        for (Student student : students) {
+            int studentId = student.getId();
+            if(id == studentId){
+                return student;
+            }
+        }
+        throw new RuntimeException("Student mit id: " + id + "wurde nicht gefunden");
+    }
+
 
 }
