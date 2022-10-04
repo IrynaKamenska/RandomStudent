@@ -21,4 +21,24 @@ class StudentDBTest {
         //then
         assertArrayEquals(expected,actual);
     }
+
+
+    @Test
+    public void getAllStudentsString(){
+        //given
+        Student student1 = new Student("Zeshan",1);
+        Student student2 = new Student("Ana",2);
+        Student [] array1 = new Student[2];
+        array1[0] = student1;
+        array1[1] = student2;
+        StudentDB db = new StudentDB(array1);
+
+        //when
+        Student[] actual = db.getAllStudents();
+        Student[] expected = new Student[]{student1};
+        //then
+        assertArrayEquals(expected,actual);
+    }
+
+
 }
