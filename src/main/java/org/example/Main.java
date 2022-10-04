@@ -2,7 +2,9 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-
-        System.out.println("Hello world!");
+        Student st1 = new Student("Ana", 1);
+        st1.setName("Bob");
+        System.out.println(st1);
+        System.out.println(st1.getName());
     }
 }
