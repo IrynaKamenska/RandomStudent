@@ -2,9 +2,8 @@ package de.bootcamp;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -73,27 +72,27 @@ class StudentDBTest {
 
     }
 
-//    @Test
-//    public void findByIdWithTryCatch() {
-//        //given
-//        Student student1 = new Student("Zeshan",0);
-//        Student student2 = new Student("Ana",1);
-//
-//        HashMap<Integer, Student>  map = new HashMap<>();
-//        map.put(1, student1);
-//        map.put(2, student2);
-//
-//        StudentDB db = new StudentDB(map);
-//
-//
-//        // when
-//        try{
-//            db.findStudentById(2);
-//            fail("Exception ist nicht aufgetreten");
-//
-//        } catch(Exception e){
-//            System.out.println("Exception ist aufgetreten");
-//        }
-//        }
+    @Test
+    public void findByIdWithTryCatch() {
+        //given
+        Student student1 = new Student("Zeshan", 0);
+        Student student2 = new Student("Ana", 1);
+
+        HashMap<Integer, Student> map = new HashMap<>();
+        map.put(1, student1);
+        map.put(2, student2);
+
+        StudentDB db = new StudentDB(map);
+
+
+        // when
+        try{
+            db.findById(2);
+            fail("Exception ist nicht aufgetreten");
+
+        } catch(Exception e){
+            System.out.println("Exception ist aufgetreten");
+        }
+        }
 
 }
