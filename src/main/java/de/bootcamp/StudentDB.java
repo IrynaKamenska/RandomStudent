@@ -22,14 +22,23 @@ public class StudentDB {
 
 
     public Student findById(int id) {
-        for (Map.Entry<Integer, Student> set : students.entrySet()) {
-            int studentId = set.getValue().getId();
+        for (Map.Entry<Integer, Student> entry : students.entrySet()) {
+            int studentId = entry.getValue().getId();
             if (id == studentId) {
-                return set.getValue();
+                return entry.getValue();
             }
         }
         throw new RuntimeException("Student mit id: " + id + " wurde nicht gefunden");
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Student student : students.values()) {
+            sb.append(student.toString() + "\n");
+        }
+        return sb.toString();
+    }
+
 
 //    public Student findStudentById(int id) {
 //        for (int i = 0; i < students.size(); i++) {
@@ -49,6 +58,4 @@ public class StudentDB {
 //        }
 //        throw new RuntimeException("Student mit id: " + id + "wurde nicht gefunden");
 //    }
-
-
 }

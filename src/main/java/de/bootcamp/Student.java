@@ -26,16 +26,15 @@ public class Student {
     }
 
     public void setName(String name){
-        this.name=name;
+        this.name = name;
     }
-
 
     public String getName(){
         return name;
     }
 
     public void setId(int id){
-        this.id=id;
+        this.id = id;
     }
 
     public int getId(){

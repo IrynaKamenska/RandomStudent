@@ -9,8 +9,8 @@ public class Main {
         Student st2 = new Student("Bob", 2);
 
         HashMap<Integer, Student> map = new HashMap<>();
-        map.put(1,st1);
-        map.put(2,st2);
+        map.put(0, st1);
+        map.put(1, st2);
         System.out.println("Keys: " + map.keySet());
         System.out.println("Values: " + map.values());
 
@@ -20,14 +20,13 @@ public class Main {
         System.out.println("Map of students: " + mapOfStudents);
         System.out.println("Random student: " + db.getRandomStudent());
 
-        try{
+        try {
             Student st = db.findById(1);
-            System.out.println("Studen was found: " + st);
-        } catch(RuntimeException e){
+            System.out.println("Student was found: " + st);
+        } catch (RuntimeException e) {
             System.out.println("Student was not found");
         }
-        System.out.println(db.findById(1));
 
-
+        System.out.println("All students: \n" + db);
     }
 }
