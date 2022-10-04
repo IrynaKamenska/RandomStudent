@@ -58,7 +58,7 @@ class StudentDBTest {
 
 
        // when
-       Student actual = db.findStudentById(1);
+       Student actual = db.findById(1);
        Student expected = (array1[1]);
 
        // then
