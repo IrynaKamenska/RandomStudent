@@ -1,20 +1,20 @@
 package de.bootcamp;
 
-import java.rmi.server.ExportException;
+import java.util.ArrayList;
 
 public class StudentDB {
-    private Student[] students;
+    private final ArrayList<Student> students;
 
-    public StudentDB(Student [] students){
+    public StudentDB(ArrayList<Student> students){
         this.students = students;
     }
-    public  Student[] getAllStudents(){
+    public ArrayList<Student> getAllStudents(){
         return students;
     }
 
     public Student getRandomStudent() {
-        int randomStudent = (int)(Math.random() * (students.length));
-        return students[randomStudent];
+        int randomStudent = (int)(Math.random() * (students.size()));
+        return students.get(randomStudent);
     }
 
     public Student findById(int id){
@@ -27,10 +27,10 @@ public class StudentDB {
         throw new RuntimeException("Student mit id: " + id + "wurde nicht gefunden");
     }
 
-    public Student findStudentById(int id) throws Exception {
-        for (int i = 0; i < students.length ; i++) {
-            if(id == students[i].getId()){
-                return students[i];
+    public Student findStudentById(int id){
+        for (int i = 0; i < students.size() ; i++) {
+            if(id == students.get(i).getId()){
+                return students.get(i);
             }
         }
         throw new RuntimeException("Student mit id: " + id + "wurde nicht gefunden");

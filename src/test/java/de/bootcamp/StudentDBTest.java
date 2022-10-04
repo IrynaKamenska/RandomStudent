@@ -1,7 +1,8 @@
 package de.bootcamp;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,15 +12,18 @@ class StudentDBTest {
     public void getAllStudents(){
         //given
         Student student1 = new Student("Zeshan",1);
-        Student [] array1 = new Student[1];
-        array1[0] = student1;
-        StudentDB db = new StudentDB(array1);
+        ArrayList<Student> list = new ArrayList<>();
+        list.add(student1);
+
+        StudentDB db = new StudentDB(list);
 
         //when
-        Student[] actual = db.getAllStudents();
-        Student[] expected = new Student[]{student1};
+        ArrayList<Student> actual = db.getAllStudents();
+        ArrayList<Student> expected = new ArrayList<>();
+        expected.add(student1);
+
         //then
-        assertArrayEquals(expected,actual);
+        assertEquals(expected,actual);
     }
 
 
@@ -28,38 +32,37 @@ class StudentDBTest {
         //given
         Student student1 = new Student("Zeshan",1);
         Student student2 = new Student("Ana",2);
-        Student [] array1 = new Student[2];
-        array1[0] = student1;
-        array1[1] = student2;
-        StudentDB db = new StudentDB(array1);
+        ArrayList<Student> list = new ArrayList<>();
+        list.add(student1);
+        list.add(student2);
+
+        StudentDB db = new StudentDB(list);
 
         //when
-        Student[] actual = db.getAllStudents();
-        Student[] expected = new Student[]{student1, student2};
+        ArrayList<Student> actual = db.getAllStudents();
+        ArrayList<Student> expected = new ArrayList<>();
+        expected.add(student1);
+        expected.add(student2);
         //then
-        assertArrayEquals(expected,actual);
+        assertEquals(expected,actual);
     }
 
     @Test
-    public void findById() throws Exception {
+    public void findById() {
         //given
         Student student1 = new Student("Zeshan",0);
         Student student2 = new Student("Ana",1);
-        Student [] array1 = new Student[2];
-        array1[0] = student1;
-        array1[1] = student2;
 
-        StudentDB db = new StudentDB(array1);
+        ArrayList<Student> list = new ArrayList<>();
+        list.add(student1);
+        list.add(student2);
 
-//
-//        for (int i = 0; i < array1.length; i++) {
-//            System.out.println(array1[i]);
-//        }
+        StudentDB db = new StudentDB(list);
 
 
        // when
        Student actual = db.findById(1);
-       Student expected = (array1[1]);
+       Student expected = list.get(1);
 
        // then
 
@@ -68,15 +71,16 @@ class StudentDBTest {
     }
 
     @Test
-    public void findByIdWithTryCatch() throws Exception {
+    public void findByIdWithTryCatch() {
         //given
         Student student1 = new Student("Zeshan",0);
         Student student2 = new Student("Ana",1);
-        Student [] array1 = new Student[2];
-        array1[0] = student1;
-        array1[1] = student2;
 
-        StudentDB db = new StudentDB(array1);
+        ArrayList<Student> list = new ArrayList<>();
+        list.add(student1);
+        list.add(student2);
+
+        StudentDB db = new StudentDB(list);
 
 
         // when
