@@ -1,14 +1,28 @@
 package de.bootcamp;
 
-public class StudentDB {
-    private Student[] students;
+import java.util.ArrayList;
 
-    public StudentDB(Student [] students){
+public class StudentDB {
+
+    private ArrayList<Student> students;
+
+    public StudentDB(ArrayList<Student> students){
         this.students = students;
 
     }
-    public  Student[] getAllStudents(){
+    public  ArrayList<Student> getAllStudents(){
         return students;
     }
+public  Student findById(int id) throws Exception {
+
+    for (int i = 0; i < students.size(); i++) {
+        if (id == students.get(i).getId()) {
+            return students.get(i);
+        }
+
+    }
+    throw new Exception("Index not found");
+}
+
 
 }
