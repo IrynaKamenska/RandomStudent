@@ -3,98 +3,97 @@ package de.bootcamp;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class StudentDBTest {
 
     @Test
-    public void getAllStudents(){
+    public void getAllStudents() {
         //given
-        Student student1 = new Student("Zeshan",1);
-        ArrayList<Student> list = new ArrayList<>();
-        list.add(student1);
+        Student student1 = new Student("Zeshan", 1);
+        HashMap<Integer, Student> map = new HashMap<>();
+        map.put(1, student1);
 
-        StudentDB db = new StudentDB(list);
+        StudentDB db = new StudentDB(map);
 
         //when
-        ArrayList<Student> actual = db.getAllStudents();
-        ArrayList<Student> expected = new ArrayList<>();
-        expected.add(student1);
+        HashMap<Integer, Student> actual = db.getAllStudents();
+        HashMap<Integer, Student> expected = new HashMap<>();
+        expected.put(1, student1);
 
         //then
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
 
     @Test
-    public void getAllStudentsString(){
+    public void getAllStudentsString() {
         //given
-        Student student1 = new Student("Zeshan",1);
-        Student student2 = new Student("Ana",2);
-        ArrayList<Student> list = new ArrayList<>();
-        list.add(student1);
-        list.add(student2);
+        Student student1 = new Student("Zeshan", 1);
+        Student student2 = new Student("Ana", 2);
+        HashMap<Integer, Student> map = new HashMap<>();
+        map.put(1, student1);
+        map.put(2, student2);
 
-        StudentDB db = new StudentDB(list);
+        StudentDB db = new StudentDB(map);
 
         //when
-        ArrayList<Student> actual = db.getAllStudents();
-        ArrayList<Student> expected = new ArrayList<>();
-        expected.add(student1);
-        expected.add(student2);
+        HashMap<Integer, Student> actual = db.getAllStudents();
+        HashMap<Integer, Student> expected = new HashMap<>(map);
+        System.out.println(expected);
+
         //then
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
     public void findById() {
         //given
-        Student student1 = new Student("Zeshan",0);
-        Student student2 = new Student("Ana",1);
+        Student student1 = new Student("Zeshan", 0);
+        Student student2 = new Student("Ana", 1);
 
-        ArrayList<Student> list = new ArrayList<>();
-        list.add(student1);
-        list.add(student2);
+        HashMap<Integer, Student> map = new HashMap<>();
+        map.put(1, student1);
+        map.put(2, student2);
 
-        StudentDB db = new StudentDB(list);
+        StudentDB db = new StudentDB(map);
 
 
-       // when
-       Student actual = db.findById(1);
-       Student expected = list.get(1);
+        // when
+        Student actual = db.findById(0);
+        Student expected = map.get(1);
+        System.out.println(expected);
+        System.out.println("Actual " + actual);
 
-       // then
-
+        // then
         assertEquals(expected, actual);
 
     }
 
-    @Test
-    public void findByIdWithTryCatch() {
-        //given
-        Student student1 = new Student("Zeshan",0);
-        Student student2 = new Student("Ana",1);
-
-        ArrayList<Student> list = new ArrayList<>();
-        list.add(student1);
-        list.add(student2);
-
-        StudentDB db = new StudentDB(list);
-
-
-        // when
-        try{
-            db.findStudentById(2);
-            fail("Exception ist nicht aufgetreten");
-
-        } catch(Exception e){
-            System.out.println("Exception ist aufgetreten");
-        }
-
-
-    }
-
-
+//    @Test
+//    public void findByIdWithTryCatch() {
+//        //given
+//        Student student1 = new Student("Zeshan",0);
+//        Student student2 = new Student("Ana",1);
+//
+//        HashMap<Integer, Student>  map = new HashMap<>();
+//        map.put(1, student1);
+//        map.put(2, student2);
+//
+//        StudentDB db = new StudentDB(map);
+//
+//
+//        // when
+//        try{
+//            db.findStudentById(2);
+//            fail("Exception ist nicht aufgetreten");
+//
+//        } catch(Exception e){
+//            System.out.println("Exception ist aufgetreten");
+//        }
+//        }
 
 }
