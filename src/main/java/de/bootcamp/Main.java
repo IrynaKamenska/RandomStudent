@@ -30,5 +30,19 @@ public class Main {
         }
 
         System.out.println("All students: \n" + db);
+
+
+        ComputerScienceStudent compStudent = new ComputerScienceStudent("Alice", 1, "Informatik");
+        compStudent.setStudienfach("Matte");
+        System.out.println("Computer science student: " + compStudent.toString());
+        System.out.println(compStudent.getStudienfach());
+        System.out.println(compStudent.getName());
+
+
     }
+
+
+
+
+
 }
