@@ -5,8 +5,21 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        Student st1 = new Student("Ana", 1);
-        Student st2 = new Student("Bob", 2);
+        Student st1 = new ComputerScienceStudent("Ana", 1, "Informatik");
+        Student st2 = new ComputerScienceStudent("Bob", 2, "Matte");
+        System.out.println(st1.getCourse());
+        System.out.println(st2.getCourse());
+
+        System.out.println("Subject :" + st1.getSubject());
+
+
+        ComputerScienceStudent compStudent = new ComputerScienceStudent("Alice", 1, "Informatik");
+        compStudent.setStudienfach("Matte");
+        System.out.println("Computer science student: " + compStudent.toString());
+        System.out.println(compStudent.getSubject());
+        System.out.println(compStudent.getName());
+        compStudent.getCourse();
+
 
         HashMap<Integer, Student> map = new HashMap<>();
         map.put(0, st1);
@@ -32,11 +45,7 @@ public class Main {
         System.out.println("All students: \n" + db);
 
 
-        ComputerScienceStudent compStudent = new ComputerScienceStudent("Alice", 1, "Informatik");
-        compStudent.setStudienfach("Matte");
-        System.out.println("Computer science student: " + compStudent.toString());
-        System.out.println(compStudent.getStudienfach());
-        System.out.println(compStudent.getName());
+
 
 
     }

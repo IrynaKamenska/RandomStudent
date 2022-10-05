@@ -12,7 +12,8 @@ class StudentDBTest {
     @Test
     public void getAllStudents() {
         //given
-        Student student1 = new Student("Zeshan", 1);
+//        Student student1 = new Student("Zeshan", 1);
+        Student student1 = new ComputerScienceStudent("Alice", 1, "Informatik");
         HashMap<Integer, Student> map = new HashMap<>();
         map.put(0, student1);
 
@@ -31,8 +32,10 @@ class StudentDBTest {
     @Test
     public void getAllStudentsString() {
         //given
-        Student student1 = new Student("Ana", 1);
-        Student student2 = new Student("Bob", 2);
+//        Student student1 = new Student("Ana", 1);
+//        Student student2 = new Student("Bob", 2);
+        Student student1 = new ComputerScienceStudent("Ana", 1, "Informatik");
+        Student student2 = new ComputerScienceStudent("Bob", 2, "Matte");
         HashMap<Integer, Student> map = new HashMap<>();
         map.put(0, student1);
         map.put(1, student2);
@@ -50,9 +53,11 @@ class StudentDBTest {
     @Test
     public void findById() {
         //given
-        Student student1 = new Student("Zeshan", 1);
-        Student student2 = new Student("Ana", 2);
+//        Student student1 = new Student("Zeshan", 1);
+//        Student student2 = new Student("Ana", 2);
 
+        Student student1 = new ComputerScienceStudent("Alice", 1, "Informatik");
+        Student student2 = new ComputerScienceStudent("Bob", 2, "Matte");
         HashMap<Integer, Student> map = new HashMap<>();
         map.put(0, student1);
         map.put(1, student2);
@@ -70,8 +75,10 @@ class StudentDBTest {
     @Test
     public void findByIdWithTryCatch() {
         //given
-        Student student1 = new Student("Zeshan", 1);
-        Student student2 = new Student("Ana", 2);
+//        Student student1 = new Student("Zeshan", 1);
+//        Student student2 = new Student("Ana", 2);
+        Student student1 = new ComputerScienceStudent("Alice", 1, "Informatik");
+        Student student2 = new ComputerScienceStudent("Bob", 2, "Matte");
 
         HashMap<Integer, Student> map = new HashMap<>();
         map.put(0, student1);
@@ -86,5 +93,10 @@ class StudentDBTest {
         } catch (Exception e) {
             System.out.println("Exception ist aufgetreten");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "StudentDBTest{}";
     }
 }

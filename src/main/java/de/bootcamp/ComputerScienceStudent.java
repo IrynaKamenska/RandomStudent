@@ -9,7 +9,7 @@ public class ComputerScienceStudent extends Student {
         this.studienfach = studienfach;
     }
 
-    public String getStudienfach() {
+    public String getSubject() {
         return studienfach;
     }
 
@@ -20,10 +20,21 @@ public class ComputerScienceStudent extends Student {
     @Override
     public String toString() {
         return "ComputerScienceStudent{" +
-                "name='" + getName() + '\'' +
-                "id='" + getId() + '\'' +
                 "studienfach='" + studienfach + '\'' +
+                "} " + super.toString();
+    }
+
+
+    public String toString1() {
+        return "ComputerScienceStudent{" +
+                "studienfach='" + studienfach + '\'' +
+                "studienfach='" + getName() + '\'' +
                 '}';
     }
 
+
+    @Override
+    public String getCourse() {
+        return "Computer science";
+    }
 }
