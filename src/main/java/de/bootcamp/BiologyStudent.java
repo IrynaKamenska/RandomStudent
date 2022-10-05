@@ -1,10 +1,10 @@
 package de.bootcamp;
 
-public class ComputerScienceStudent extends Student implements Citizen {
+public class BiologyStudent extends Student implements Citizen{
     private String subject;
 
 
-    public ComputerScienceStudent(String name, int id, String subject) {
+    public BiologyStudent(String name, int id, String subject) {
         super(name, id);
         this.subject = subject;
     }
@@ -19,27 +19,28 @@ public class ComputerScienceStudent extends Student implements Citizen {
 
     @Override
     public String toString() {
-        return "ComputerScienceStudent{" +
+        return "BiologyStudent{" +
                 "studienfach='" + subject + '\'' +
                 "} " + super.toString();
     }
 
-
-    public String toString1() {
-        return "ComputerScienceStudent{" +
-                "studienfach='" + subject + '\'' +
-                "studienfach='" + getName() + '\'' +
-                '}';
-    }
-
-
     @Override
     public String getAdress() {
-        return "computer science adress";
+        return "Biology Adress";
     }
 
     @Override
     public int getIdentityCardNumber() {
-        return 100;
+        return 200;
     }
+
+
+//    public String toString1() {
+//        return "BiologyStudent{" +
+//                "studienfach='" + studienfach + '\'' +
+//                "studienfach='" + getName() + '\'' +
+//                '}';
+//    }
+
+
 }

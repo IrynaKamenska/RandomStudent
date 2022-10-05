@@ -11,7 +11,7 @@ public abstract class Student {
         this.id = id;
     }
 
-    public abstract String getCourse();
+    public abstract String getSubject();
 
     public String getName() {
         return name;
@@ -37,5 +37,7 @@ public abstract class Student {
                 '}';
     }
 
-    public abstract String getSubject();
+    public abstract String getAdress();
+    public abstract int getIdentityCardNumber();
+
 }

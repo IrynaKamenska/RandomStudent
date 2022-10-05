@@ -7,19 +7,18 @@ public class Main {
     public static void main(String[] args) {
         Student st1 = new ComputerScienceStudent("Ana", 1, "Informatik");
         Student st2 = new ComputerScienceStudent("Bob", 2, "Matte");
-        System.out.println(st1.getCourse());
-        System.out.println(st2.getCourse());
+        System.out.println(st1.getSubject());
+        System.out.println(st2.getSubject());
 
         System.out.println("Subject :" + st1.getSubject());
 
+        Student st3 = new BiologyStudent("Tom", 3, "Botanik");
+        Student st4 = new BiologyStudent("John", 4, "Zoologie");
+        System.out.println(st3.getSubject());
+        System.out.println(st3.getSubject());
 
-        ComputerScienceStudent compStudent = new ComputerScienceStudent("Alice", 1, "Informatik");
-        compStudent.setStudienfach("Matte");
-        System.out.println("Computer science student: " + compStudent.toString());
-        System.out.println(compStudent.getSubject());
-        System.out.println(compStudent.getName());
-        compStudent.getCourse();
-
+        System.out.println("Adress:" + st3.getAdress());
+        System.out.println("IdentityCardNumber:" + st3.getIdentityCardNumber());
 
         HashMap<Integer, Student> map = new HashMap<>();
         map.put(0, st1);
