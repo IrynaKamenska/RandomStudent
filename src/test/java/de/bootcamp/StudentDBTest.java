@@ -43,8 +43,12 @@ class StudentDBTest {
         StudentDB db = new StudentDB(map);
 
         //when
-        String actual = db.toString();
-        String expected = "Student{name='Ana', id=1}\nStudent{name='Bob', id=2}\n";
+        String actual = db.toStringStudent();
+        String expected = """
+                ComputerScienceStudent{studienfach='Informatik'} Student{name='Ana', id=1}
+                ComputerScienceStudent{studienfach='Matte'} Student{name='Bob', id=2}
+                """;
+
 
         //then
         assertEquals(expected, actual);
@@ -66,10 +70,9 @@ class StudentDBTest {
 
         // when
         Student actual = db.findById(2);
-        Student expected = student2;
 
         // then
-        assertEquals(expected, actual);
+        assertEquals(student2, actual);
     }
 
     @Test
