@@ -15,6 +15,8 @@ public class Main {
         System.out.println("Values: " + map.values());
 
         StudentDB db = new StudentDB(map);
+        System.out.println("To string student: " + db.toStringStudent());
+        System.out.println("To string StudentDB: " + db.toStringStudentDB());
 
         HashMap<Integer, Student> mapOfStudents = db.getAllStudents();
         System.out.println("Map of students: " + mapOfStudents);

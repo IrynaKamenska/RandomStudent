@@ -31,7 +31,7 @@ public class StudentDB {
         throw new RuntimeException("Student mit id: " + id + " wurde nicht gefunden");
     }
 
-    public String toString() {
+    public String toStringStudent() {
         StringBuilder sb = new StringBuilder();
         for (Student student : students.values()) {
             sb.append(student.toString() + "\n");
@@ -39,6 +39,12 @@ public class StudentDB {
         return sb.toString();
     }
 
+
+    public String toStringStudentDB() {
+        return "StudentDB{" +
+                "students=" + students +
+                '}';
+    }
 
 //    public Student findStudentById(int id) {
 //        for (int i = 0; i < students.size(); i++) {
